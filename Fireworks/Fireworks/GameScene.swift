@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import GameplayKit
 
 class GameScene: SKScene
 {
@@ -25,7 +26,13 @@ class GameScene: SKScene
     
     override func didMoveToView(view: SKView)
     {
+        let background = SKSpriteNode(imageNamed: "background")
+        background.position = CGPoint(x: 512, y: 384)
+        background.blendMode = .Replace
+        background.zPosition = -1
+        addChild(background)
         
+        //gameTimer = NSTimer.scheduledTimerWithTimeInterval(6, target: self, selector: "launchFireworks", userInfo: nil, repeats: true)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
@@ -34,6 +41,11 @@ class GameScene: SKScene
     }
    
     override func update(currentTime: CFTimeInterval)
+    {
+        
+    }
+    
+    func launchFireworks()
     {
         
     }
